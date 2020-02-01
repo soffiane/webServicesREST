@@ -20,7 +20,7 @@ public class Product {
         String result = null;
         try {
             System.out.println("connexion en cours ...");
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection cn = DriverManager.getConnection(Queries.URL, Queries.login, Queries.password); //("jdbc:mysql://localhost:3306/product", "root", "");
             System.out.println("connexion etablie !");
             Statement st = cn.createStatement();
@@ -60,7 +60,7 @@ public class Product {
 
         try {
             System.out.println("connexion en cours ...");
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection cn = DriverManager.getConnection(Queries.URL, Queries.login, Queries.password); //("jdbc:mysql://localhost:3306/product", "root", "");
             System.out.println("connexion etablie !");
             Statement st = cn.createStatement();

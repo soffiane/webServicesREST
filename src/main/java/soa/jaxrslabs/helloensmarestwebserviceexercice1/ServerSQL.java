@@ -6,16 +6,13 @@ public class ServerSQL {
 
     public static void main(String[] args) {
 
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection cn=DriverManager.getConnection(Queries.URL,Queries.login,Queries.password);
-            Statement st=cn.createStatement();
+        try (Connection cn = DriverManager.getConnection(Queries.URL, Queries.login, Queries.password)) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Statement st = cn.createStatement();
 
             /*Question 4*/
 
             Queries.exeQuerries(Queries.SELECT, st);
-
-
                   /*QUESTION 3 : Prepared Statement
 
                   PreparedStatement st=cn.prepareStatement("INSERT INTO Films VALUES(?,?,?,?);");
@@ -33,12 +30,9 @@ public class ServerSQL {
 
 
             st.close();
-            cn.close();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Erreur");
         }
-
     }
-
 }

@@ -7,7 +7,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-@Path("helloensma")
+@Path("/helloensma")
 public class HelloENSMA {
 	public HelloENSMA() { }
 	
@@ -18,7 +18,7 @@ public class HelloENSMA {
 	}
 	
 	@GET
-	@Path("{id}")
+	@Path("/{id}")
 	@Produces("application/xml")
 	public String getXmlWithParams(
 	        @PathParam("id") String id,
